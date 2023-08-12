@@ -1,0 +1,22 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Mesajlar
+
+@{
+    ViewBag.Title = "MesajDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mesaj Detay</h2>
+
+<form class="form-group">
+    @Html.HiddenFor(x=>x.mesajid)
+    <label class="label-info" style="color:blueviolet">ALICI </label>
+    @Html.TextBoxFor(x => x.alici, new { @class = "form-control",disabled="disabled"})
+    <br />
+    <label class="label-info" style="color:blueviolet">KONU</label>
+    @Html.TextBoxFor(x => x.konu, new { @class = "form-control", disabled = "disabled" })
+    <br />
+    <label class="label-info" style="color:blueviolet">İÇERİK </label>
+    @Html.TextAreaFor(x => x.icerik, new { @class = "form-control", rows = 4, cols = 40, disabled = "disabled" })
+    <br />
+    <a href="/AdminMesaj/MesajEkle/" class="btn btn-outline-light">Cevapla</a>
+</form>

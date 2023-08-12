@@ -1,0 +1,35 @@
+﻿@model MVC5_OnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YeniUrun</h2>
+<form class="form-group" method="post">
+    @Html.Label("ÜRÜN ADI")
+    @Html.TextBoxFor(x => x.UrunAdı, new { @class = "form-control" })
+    <br />
+    @Html.Label("MARKA")
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    @Html.Label("STOK")
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.Label("ALIŞ FİYATI")
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("SATIŞ FİYATI")
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("DURUM")
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    @Html.Label("ÜRÜN GÖRSEL")
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    <br />
+    @Html.Label("KATEGORİ")
+    @Html.DropDownListFor(x=>x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1,new { @class="form-control"})
+    <br />
+    <button class="btn btn-primary">EKLE</button>
+</form>
+

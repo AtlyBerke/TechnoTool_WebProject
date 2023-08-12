@@ -1,0 +1,21 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Class1
+
+<div class="border p-4 rounded mb-4">
+    <div class="mb-4">
+        <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
+        <div id="slider-range" class="border-primary"></div>
+        <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+    </div>
+
+    
+
+    <div class="mb-4">
+        <h3 class="mb-3 h6 text-uppercase text-black d-block">Kategoriler</h3>
+        @foreach (var y in Model.kategori)
+        {
+            <a href="/KullaniciMagaza/KategoriyeGoreUrunListe/@y.kategoriid" class="d-flex color-item align-items-center">
+                <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span class="text-black">@y.kategoriad</span>
+            </a>
+        }
+    </div>
+</div>

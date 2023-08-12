@@ -1,0 +1,35 @@
+﻿@model MVC5_OnlineTicariOtomasyon.Models.Siniflar.Fatura
+@{
+    ViewBag.Title = "YeniFatura";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Fatura Ekle</h2>
+<form class="form-group" method="post" style="margin-left:15px; margin-right:10px;">
+    @Html.Label("SERİ NO")
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    @Html.Label("SIRA NO")
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+    <br />
+    @Html.Label("TOPLAM TUTAR")
+    @Html.TextBoxFor(x => x.Toplam, new { @class = "form-control" })
+    <br />
+    @Html.Label("TARİH")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.Label("VERGİ DAİRESİ")
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.Label("SAAT")
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    @Html.Label("TESLİM EDEN")
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    <br />
+    @Html.Label("TESLİM ALAN")
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" class="btn btn-primary">EKLE</button>
+</form>
+

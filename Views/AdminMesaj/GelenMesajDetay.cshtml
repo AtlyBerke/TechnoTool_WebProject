@@ -1,0 +1,31 @@
+﻿@using TechnoTool_WebApp.Models.Siniflar
+@model List<Mesajlar>
+
+@{
+    ViewBag.Title = "GelenMesajDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mesaj Detay</h2>
+
+<form class="form-group">
+    @foreach (var x in Model)
+    {
+        <label class="label-info" style="color:blueviolet">GÖNDEREN </label>
+        <input type="text" value="@x.gonderici" class="form-control" />
+
+        <br />
+        <label class="label-info" style="color:blueviolet">KONU</label>
+        <input type="text" value="@x.konu" class="form-control"  />
+
+        <br />
+        <label class="label-info" style="color:blueviolet">İÇERİK </label>
+        <input type="text" value="@x.icerik"  style="height:100px;" class="form-control" />
+
+        <br />
+        <a href="/AdminMesaj/MesajEkle/" class="btn btn-outline-light">Cevapla</a>
+    }
+
+</form>
+
+

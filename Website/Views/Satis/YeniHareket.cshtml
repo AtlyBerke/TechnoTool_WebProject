@@ -1,0 +1,31 @@
+﻿@model MVC5_OnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "YeniHareket";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YeniHareket</h2>
+<form class="form-group" method="post" style="margin-left:10px;">
+    @Html.Label("CARİ")
+    @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    @Html.Label("PERSONEL")
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    <br />
+    @Html.Label("ÜRÜN")
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+    @Html.Label("ADET")
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    @Html.Label("FİYAT")
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("TOPLAM")
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+    @Html.Label("TARİH")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">EKLE</button>
+</form>

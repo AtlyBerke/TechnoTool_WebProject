@@ -1,0 +1,25 @@
+﻿@model MVC5_OnlineTicariOtomasyon.Models.Siniflar.Cari
+
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Cari</h2>
+<br />
+<form class="form form-group" method="post" style="margin-left:10px;>
+    @Html.Label("CARİ AD")
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    <br />
+    @Html.Label("CARİ SOYAD")
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("CARİ ŞEHİR")
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    @Html.Label("CARİ MAİL")
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-default" style="background-color:coral">İCRA EKLE</button>
+</form>
+

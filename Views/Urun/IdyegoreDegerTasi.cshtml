@@ -1,0 +1,50 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Urunler
+
+@{
+    ViewBag.Title = "IdyegoreDegerTasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.urunid)
+
+    @Html.Label("ÜRÜN AD")
+    @Html.TextBoxFor(x => x.urunad, new { @class = "form-control" })
+    <br />
+    @Html.Label("MARKA")
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+    @Html.Label("STOK")
+    @Html.TextBoxFor(x => x.stok, new { @class = "form-control" })
+    <br />
+    @Html.Label("ALIŞ FİYAT")
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("SATIŞ FİYAT")
+    @Html.TextBoxFor(x => x.satisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("ALIŞ FİYAT")
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("KATEGORİ", new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    @Html.Label("ÜRÜN AÇIKLAMA", new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.UrunAciklama, new { @class = "form-control", rows = 4, cols = 40 })
+    <br />
+    @Html.Label("ÜRÜN ÖZELLİKLERİ", new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.UrunOzellikler, new { @class = "form-control", rows = 6, cols = 40 })
+    <br />
+    @Html.Label("GÖRSEL 1")
+    <input class="form-control" type="file" name="gorsel1" />
+    <br />
+    @Html.Label("GÖRSEL 2")
+    <input class="form-control" type="file" name="gorsel2" />
+    <br />
+    @Html.Label("GÖRSEL 3")
+    <input class="form-control" type="file" name="gorsel3" />
+    <br />
+    <button class="btn btn-primary">GÜNCELLE</button>
+}
+

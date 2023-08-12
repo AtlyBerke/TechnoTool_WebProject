@@ -1,0 +1,46 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Urunler
+
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Ürün</h2>
+@using (Html.BeginForm("YeniUrun", "Urun", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.Label("ÜRÜN AD")
+    @Html.TextBoxFor(x => x.urunad, new { @class = "form-control" })
+    <br />
+    @Html.Label("MARKA")
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    <br />
+    @Html.Label("STOK")
+    @Html.TextBoxFor(x => x.stok, new { @class = "form-control" })
+    <br />
+    @Html.Label("ALIŞ FİYAT")
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("SATIŞ FİYAT")
+    @Html.TextBoxFor(x => x.satisfiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("KATEGORİ")
+    @Html.DropDownListFor(x => x.kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    @Html.Label("GÖRSEL 1")
+    <input class="form-control" type="file" name="gorsel1" />
+    <br />
+    @Html.Label("GÖRSEL 2")
+    <input class="form-control" type="file" name="gorsel2" />
+    <br />
+    @Html.Label("GÖRSEL 3")
+    <input class="form-control"  type="file" name="gorsel3" />
+    <br />
+    @Html.Label("AÇIKLAMA")
+    @Html.TextAreaFor(x => x.UrunAciklama, new { @class = "form-control" })
+    <br />
+    @Html.Label("ÖZELLİKLER")
+    @Html.TextAreaFor(x => x.UrunOzellikler, new { @class = "form-control",rows=4,cols=40 })
+    <br />
+    <button class="btn btn-primary">EKLE</button>
+}

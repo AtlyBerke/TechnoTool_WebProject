@@ -1,0 +1,32 @@
+﻿@using MVC5_OnlineTicariOtomasyon.Models.Siniflar
+@model List<Personel>
+
+@{
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Departman Detay</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">@ViewBag.dgr</li>
+</ol>
+
+<table class="table table-hover">
+    <tr>
+    
+        <th>AD SOYAD</th>
+        <th>GÖRSEL</th>
+        <th>#</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+           
+            <td>@x.PersonelAd @x.PersonelSoyad</td>
+            <td> <img src="@x.PersonelGorsel" style="width:100px; height:100px;" /> </td>
+            <td><a href="/Departman/PersonelSatisDetay/@x.PersonelID" class="btn btn-info">SATIŞLAR</a></td>
+        </tr>
+    }
+
+</table>

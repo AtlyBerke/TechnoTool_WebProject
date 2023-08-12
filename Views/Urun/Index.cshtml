@@ -1,0 +1,54 @@
+﻿@using TechnoTool_WebApp.Models.Siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Urunler>
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ÜRÜN ADI</th>
+            <th scope="col">MARKA</th>
+            <th scope="col">STOK</th>
+            <th scope="col">ALIŞ FİYAT</th>
+            <th scope="col">SATIŞ FİYAT</th>
+            <th scope="col">KATEGORİ</th>
+            <th># </th>
+            <th>#</th>
+            <th>#</th>
+
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@x.urunad</td>
+                <td>@x.marka</td>
+                <td>@x.stok</td>
+                <td>@x.alisfiyat</td>
+                <td>@x.satisfiyat</td>
+                <td>@x.kategori.kategoriad</td>
+                <td><a href="/Urun/UrunSil/@x.urunid" style="color:red">SİL</a></td>
+                <td><a href="/Urun/IdyegoreDegerTasi/@x.urunid" style="color:burlywood">GÜNCELLE</a></td>
+                <td><a href="/Urun/UrunDetay/@x.urunid" style="color:firebrick">DETAY</a></td>
+
+
+            </tr>
+        </tbody>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}),new PagedListRenderOptions
+                                    {
+                                         LiElementClasses=new List<string>
+                                         {"page-link"}
+                                    })
+
+<a href="/Urun/YeniUrun/" class="btn btn-outline-success">Yeni Ürün </a>

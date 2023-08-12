@@ -1,0 +1,13 @@
+﻿body {
+    .site-blocks-cover
+{
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    margin: 0;
+    background-image: url(/shoppers-gh-pages/images/pexels-luna-lovegood-4087270.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+   
+}

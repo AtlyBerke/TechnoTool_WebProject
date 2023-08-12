@@ -1,0 +1,115 @@
+﻿@using TechnoTool_WebApp.Models.Siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Urunler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="~/shoppers-gh-pages/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="~/shoppers-gh-pages/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/shoppers-gh-pages/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/shoppers-gh-pages/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/shoppers-gh-pages/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/shoppers-gh-pages/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/shoppers-gh-pages/css/aos.css">
+    <link rel="stylesheet" href="~/shoppers-gh-pages/css/style.css">
+
+</head>
+<body>
+
+    <div class="site-wrap">
+        <header class="site-navbar" role="banner"></header>
+
+        <div class="site-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-9 order-2">
+                        <div class="row">
+                            <div class="col-md-12 mb-5">
+                                <div class="float-md-left mb-4"><h2 class="text-black h5">Ürünler</h2></div>
+                                <div class="d-flex">
+                                    <div class="dropdown mr-1 ml-md-auto">
+                                        <a href="/KullaniciMagaza/SonUruneGoreListe" class="btn btn-secondary btn-sm ">
+                                            Son Eklenen Ürüne Göre LİSTELE
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+
+                            @foreach (var x in Model)
+                            {
+                                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                                    <div class="block-4 text-center border">
+                                        <figure class="block-4-image">
+                                            <a href="/UrunDetay/Index/@x.urunid"><img src="@x.gorsel1" alt="Image placeholder" class="img-fluid" style="width:150px; height:150px;"></a>
+                                        </figure>
+                                        <div class="block-4-text p-4">
+                                            <h3><a href="/UrunDetay/Index/@x.urunid">@x.urunad</a></h3>
+                                            <p class="mb-0">@x.marka</p>
+                                            <p class="text-primary font-weight-bold">@x.satisfiyat ₺</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                           
+
+                        </div>
+
+                        <div class="row" data-aos="fade-up">
+                            <div class="col-md-12 text-center">
+                                <div class="site-block-27">
+                                    <ul>
+
+                                        @Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}),new PagedListRenderOptions
+                                      {
+                                           LiElementClasses=new List<string>
+                                           {"page-link"}
+                                      })
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 order-1 mb-5 mb-md-0">
+
+                        @Html.Action("Filter", "KullaniciMagaza")
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
+

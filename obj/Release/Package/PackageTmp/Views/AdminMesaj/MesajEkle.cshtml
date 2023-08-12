@@ -1,0 +1,21 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Mesajlar
+@{
+    ViewBag.Title = "MesajEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mesaj Ekle</h2>
+@using (Html.BeginForm("MesajEkle", "AdminMesaj", FormMethod.Post))
+{
+
+    @Html.Label("ALICI")
+    @Html.TextBoxFor(x => x.alici, new { @class = "form-control" })
+    <br />
+    @Html.Label("KONU")
+    @Html.TextBoxFor(x => x.konu, new { @class = "form-control" })
+    <br />
+    @Html.Label("İÇERİK")
+    @Html.TextAreaFor(x => x.icerik, new { @class = "form-control",rows=6,cols=40 })
+    <br />
+    <button class="btn btn-primary">EKLE</button>
+}

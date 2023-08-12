@@ -1,0 +1,31 @@
+﻿@using MVC5_OnlineTicariOtomasyon.Models.Siniflar
+@model List<KargoTakip>
+
+@{
+    ViewBag.Title = "CariKargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>Kargo Takip</h2>
+<br />
+<table class="table table-striped" style="margin-top:20px">
+    <tr>
+        <th>SIRA</th>
+        <th>TAKİP KODU</th>
+        <th>AÇIKLAMA</th>
+        <th>TARİH-ZAMAN</th>
+    </tr>
+
+    @{ int i = 0;}
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@{i++;} @i </td>
+            <td>@x.TakipKodu</td>
+            <td>@x.TarihZaman</td>
+            <td>@x.Aciklama</td>
+        </tr>
+    }
+
+</table>
+

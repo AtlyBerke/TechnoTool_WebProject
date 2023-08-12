@@ -1,0 +1,30 @@
+﻿@using MVC5_OnlineTicariOtomasyon.Models.Siniflar
+@model List<KargoDetay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kargo Detay</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>PERSONEL</th>
+        <th>ALICI</th>
+        <th>TARİH</th>
+        <th>#</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Personel</td>
+            <td>@x.Alici</td>
+            <td>@x.Tarih</td>
+            <td><a href="/Kargo/KargoTakip/@x.TakipKodu" class="btn btn-info">DETAY</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Kargo/YeniKargo/" class="btn btn-primary">YENİ KARGO EKLE</a>
+

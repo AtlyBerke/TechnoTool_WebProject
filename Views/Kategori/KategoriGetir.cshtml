@@ -1,0 +1,17 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Kategoriler
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.kategoriid)
+
+    @Html.Label("Kategori")
+    @Html.TextBoxFor(x => x.kategoriad, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">GÜNCELLE</button>
+}
+

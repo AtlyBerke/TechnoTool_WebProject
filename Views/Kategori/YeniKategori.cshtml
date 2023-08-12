@@ -1,0 +1,22 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Kategoriler
+
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<form class="form-group" method="post">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.kategoriad, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">EKLE</button>
+    </form>*@
+
+@using (Html.BeginForm("YeniKategori", "Kategori", FormMethod.Post))
+{
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.kategoriad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.kategoriad, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-primary">EKLE</button>
+}

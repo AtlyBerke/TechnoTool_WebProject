@@ -1,0 +1,60 @@
+﻿@using TechnoTool_WebApp.Models.Siniflar
+@model List<Mesajlar>
+
+@{
+    ViewBag.Title = "OkunanMesajlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>OkunanMesajlar</h2>
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>GÖNDERİCİ</th>
+                        <th>ALICI</th>
+                        <th>KONU</th>
+                        <th>İÇERİK</th>
+                        <th>TARİH</th>
+                        <th>#</th>
+                   
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>GÖNDERİCİ</th>
+                        <th>ALICI</th>
+                        <th>KONU</th>
+                        <th>İÇERİK</th>
+                        <th>TARİH</th>
+                        <th>#</th>
+              
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.gonderici</td>
+                            <td>@x.alici</td>
+                            <td>@x.konu</td>
+                            <td>@x.icerik</td>
+                            <td>@x.tarih.ToShortDateString()</td>
+                            <td><a href="/AdminMesaj/GelenMesajDetay/@x.mesajid" class="btn btn-secondary">Detay</a></td>
+                           
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+            <br />
+           
+        </div>
+        <br />
+
+    </div>
+

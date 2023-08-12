@@ -1,0 +1,32 @@
+﻿@model MVC5_OnlineTicariOtomasyon.Models.Siniflar.Cari
+
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CariGetir</h2>
+<div style="margin-left:10px;">
+    @using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.CariID)
+
+        @Html.Label("CARİ AD")
+        @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("CARİ SOYAD")
+        @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariSoyad, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("CARİ ŞEHİR")
+        @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+        <br />
+        @Html.Label("CARİ MAİL")
+        @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">GÜNCELLE</button>
+    }
+</div>
+
+

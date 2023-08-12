@@ -1,0 +1,33 @@
+﻿@using TechnoTool_WebApp.Models.Siniflar
+@model List<Kategoriler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Kategoriler</span> Sayfası</h4>
+    <!-- Icon container -->
+    <div class="d-flex flex-wrap" id="icons-container">
+        @foreach (var x in Model)
+        {
+            <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+
+                <div class="card-body">
+                    <i class="bx bxl-adobe mb-2"></i>
+                    <p class="icon-name text-capitalize text-truncate mb-0">@x.kategoriad</p>
+                    <br />
+                    <a href="/Kategori/KategoriSil/@x.kategoriid" class="btn btn-danger">SİL</a>
+                    <br />
+                    <br />
+                    <a href="/Kategori/KategoriGetir/@x.kategoriid" class="btn btn-info">GÜNCELLE</a>
+                </div>
+
+            </div>
+        }
+
+    </div>
+    
+</div>
+<a href="/Kategori/YeniKategori/" class="btn btn-outline-success">Yeni Kategori </a>

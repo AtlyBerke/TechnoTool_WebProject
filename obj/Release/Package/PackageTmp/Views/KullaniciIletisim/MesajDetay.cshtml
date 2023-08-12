@@ -1,0 +1,19 @@
+﻿@model TechnoTool_WebApp.Models.Siniflar.Mesajlar
+
+@{
+    ViewBag.Title = "MesajDetay";
+    Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
+}
+
+<h2>MesajDetay</h2>
+
+<form class="form-group">
+    @Html.Label("ALICI")
+    @Html.TextBoxFor(x => x.alici, new { @class = "form-control" })
+    <br />
+    @Html.Label("KONU")
+    @Html.TextBoxFor(x => x.konu, new { @class = "form-control" })
+    <br />
+    @Html.Label("İÇERİK")
+    @Html.TextBoxFor(x => x.icerik, new { @class = "form-control" })
+</form>
