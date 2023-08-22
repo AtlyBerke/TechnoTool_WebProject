@@ -1,2 +1,23 @@
 # TechnoTool_WebProject
 ASP.NET MVC5 yaklaşımıyla oluşturduğum 'e-ticaret pazarı' Web Uygulaması.
+-Code First
+-Dinamik Web
+-Layout Kontrolü
+-Controller Yapısı
+-Partial View
+-Entity Framework
+-Model Yapısı
+-View Yapısı
+-Linq Sorguları
+-Entity Framework Sorguları
+-İlişkili Tablolar
+-Diyagramlar
+-CSS Kontrolleri
+-Bootstrap Yapısı
+-Bootstrap Template
+-Yetkilendirme
+-MSSQL
+-Dashboard yapısı
+-Validation
+-Authentication
+-Viewbag Kullanımı
